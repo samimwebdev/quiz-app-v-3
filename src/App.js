@@ -18,7 +18,6 @@ function App() {
     if (answer === correctAnswer) {
       setTotalScore((prevScore) => prevScore + 1)
     }
-    console.log(answer)
   }
 
   const navigateNext = () => {
@@ -61,7 +60,6 @@ function App() {
     setCorrectAnswer(initialQuestion.correct_answer)
     setLoaded(true)
     setStartQuiz(true)
-    console.log(results)
   }
 
   return (
