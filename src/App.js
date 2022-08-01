@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import IsOddOrEven from './IsOddOrEven'
-import RandomCard from './RandomCard'
+import Counter from './Counter'
 //Must be remembered
 //Must have parent element
 //must have closing
@@ -19,32 +18,10 @@ import RandomCard from './RandomCard'
 //component CSS
 
 function App() {
-  const [count, setCount] = useState(0)
-  const cardValues = [30, 33, 98, 10]
-  const [pickedValue, setPickedValue] = useState(null)
-
-  const handleIncrement = (num) => {
-    setCount((prevCount) => prevCount + num)
-  }
-
-  const handleDecrement = (num) => {
-    setCount((prevCount) => prevCount - num)
-  }
-
-  const handleReset = () => {
-    setCount(0)
-  }
-
   return (
     <>
-      <div className='container'>
-        <h2>Count : {count}</h2>
-        <button onClick={() => handleIncrement(1)}>Increment</button>
-        <button onClick={() => handleDecrement(1)}>Decrement</button>
-        <button onClick={handleReset}>Reset</button>
-      </div>
-      <IsOddOrEven count={count} pickedValue={pickedValue} />
-      <RandomCard cardValues={cardValues} setPickedValue={setPickedValue} />
+      <h2>Introduction to LifeCycle Hooks</h2>
+      <Counter />
     </>
   )
 }
