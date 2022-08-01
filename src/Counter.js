@@ -1,7 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 function Counter() {
   const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    console.log('Hello From lifecycle hook', count)
+    const timer = setInterval(() => {
+      setCount(count + 1)
+    }, 1000)
+
+    return () => {
+      clearInterval(timer)
+    }
+  }, [count])
 
   const handleIncrement = (num) => {
     setCount((prevCount) => prevCount + num)
